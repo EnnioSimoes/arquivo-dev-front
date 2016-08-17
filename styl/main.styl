@@ -40,11 +40,21 @@ header
     form.buscar
         float: right;
         padding: 46px 0;
+        position: relative;
         input[type="text"]
             display: block;
             float: left;
             height: 40px;
             border-radius: 3px 0 0 3px;
+            width: 0px;
+            right: -30px;
+            transition: all ease 0.5s
+            position: relative;
+            &:hover, &:focus
+                width: 190px;
+                margin-right: 0;
+                right: -2px;
+
         button.search
             width: 40px;
             height: 40px;
@@ -53,4 +63,11 @@ header
             background-size: 35px 35px;
             background-position: center;
             border: none;
-            border-radius: 0 3px 3px 0;
+            border-radius: 3px;
+            position: relative;
+            z-index: 10;
+            &:hover ~ #text_busca
+                width: 200px;
+                margin-right: 0;
+                right: -2px;
+                
