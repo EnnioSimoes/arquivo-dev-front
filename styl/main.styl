@@ -1,18 +1,35 @@
-$cinza = #36424a;
-
+//####### HELPERS ########
 .border
     border: 1px solid #000
 .block-center
     margin: 0 auto;
     display: block;
+
+//####### TIPOGRAPHY ########
+p, a, span, h1, h2, h3, h4, h5
+    font-family: 'Ubuntu', sans-serif;
+
+$cinza = #36424a;
+$azul = #24AFFF;
+
+//####### STRUCTURE ########
 .icon
     display: block;
     text-indent: -9999px;
+    float: left;
 .icon-search
     width: 32px;
     height: 32px;
-    background: url(./../images/icons/icon-search.svg);
+    background: url(./../images/icons/icon-search.svg) no-repeat;
     background-size: 32px 32px;
+.icon-code
+    width: 25px;
+    height: 25px;
+    background: url(./../images/icons/icon-code.svg) no-repeat;
+    background-position: center;
+    background-size: 17px;
+
+//####### HEADER ########
 header
     width: 100%;
     background-color: $cinza;
@@ -31,7 +48,7 @@ header
                     font-weight: bold;
                     font-size: 16px;
                     text-decoration: none;
-                    padding: 55px 7px;
+                    padding: 42px 7px;
                     display: block;
                     margin: 0;
                     transition: all ease 0.5s
@@ -39,8 +56,9 @@ header
                         background-color: $cinza + 10%;
     form.buscar
         float: right;
-        padding: 46px 0;
+        padding: 33px 0;
         position: relative;
+        min-width: 242px;
         input[type="text"]
             display: block;
             float: left;
@@ -51,7 +69,7 @@ header
             transition: all ease 0.5s
             position: relative;
             &:hover, &:focus
-                width: 190px;
+                width: 195px;
                 margin-right: 0;
                 right: -2px;
 
@@ -70,4 +88,24 @@ header
                 width: 200px;
                 margin-right: 0;
                 right: -2px;
-                
+.mega-menu-dropdown
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    border: 1px solid #ccc;
+    background: #95A5A6;
+    .destaque
+        background: #F9C92B;
+        height: 350px;
+        padding-top: 30px;
+        .chamada-destaque
+        a
+            text-decoration: none;
+        p
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;

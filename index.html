@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css" charset="utf-8">
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <div class="col-md-3 border">
                     <h1>
                         <a href="#">
-                            <img src="http://placehold.it/250x100?text=LOGO" class="block-center">
+                            <img src="http://placehold.it/250x75?text=LOGO" class="block-center">
                         </a>
                     </h1>
                 </div>
@@ -36,15 +37,62 @@
                 </div>
                 <div class="col-md-3 border">
                     <form class="buscar form-inline">
-                        <div class="form-group">
+                        <div class="form-group pull-right">
                             <button type="button" class="search form-control" name="button"></button>
-                            <input type="text" id="text_busca" class="form-control" name="name" value="">
+                            <input type="text" id="text_busca" placeholder="Buscar no site" class="form-control" name="name" value="">
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> <!-- end row -->
         </div>
     </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="mega-menu-dropdown">
+                    <div class="col-md-3 destaque">
+                        <div class="chamada-destaque">
+                            <a href="#">
+                                <img src="images/dockercon-2016.png" class="img-responsive" alt="" />
+                                <p>Dia 31 de fevereiro, não perca o maior evento de Docker da galaxia, faça sua incrição</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 border">
+                        <div class="col-md-4 border">
+                            <h3><span class="icon icon-code"></span> Backend</h3>
+                            <ul>
+                                <li>PHP</li>
+                                <li>RUBY</li>
+                                <li>NODEJS</li>
+                                <li>C#</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 border">
+                            <h3><span class="icon icon-code"></span> Frontend</h3>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>SASS</li>
+                                <li>STYLUS</li>
+                                <li>LESS</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 border">
+                            <h3><span class="icon icon-code"></span> Devops</h3>
+                            <ul>
+                                <li>DOCKER</li>
+                                <li>KUBERNETES</li>
+                                <li>GREYLOG</li>
+                                <li>SWARM</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="dist/build.js"></script>
 </body>
 </html>
