@@ -36,6 +36,8 @@ $verde = #05C290;
 header
     width: 100%;
     background-color: $cinza_escuro;
+    position: relative;
+    z-index: 10;
     nav
         ul.nav-principal
             display: block;
@@ -55,7 +57,7 @@ header
                     padding: 42px 7px;
                     display: block;
                     margin: 0;
-                    transition: all ease 0.5s
+                    transition: all ease 0.5s;
                     &:hover
                         background-color: $cinza_escuro + 10%;
 .mega-menu-dropdown
@@ -63,6 +65,10 @@ header
     width: 100%;
     height: 350px;
     background: #EEEEEE;
+    top: -360px;
+    transition: all ease 0.5s;
+    &.mostrar
+        top: 0;
     .destaque
         background: #F9C92B;
         height: 349px;
@@ -80,8 +86,8 @@ header
             padding-right: 10px;
     .box-links
         min-height: 310px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         padding: 0;
         h3
             text-transform: uppercase;
