@@ -8,9 +8,12 @@
 //####### TIPOGRAPHY ########
 p, a, span, h1, h2, h3, h4, h5
     font-family: 'Ubuntu', sans-serif;
+    color: #333;
 
-$cinza = #36424a;
-$azul = #24AFFF;
+$cinza_escuro = #36424a;
+$azul = #0483B5;
+$laranja = #E84C1C;
+$verde = #05C290;
 
 //####### STRUCTURE ########
 .icon
@@ -32,12 +35,13 @@ $azul = #24AFFF;
 //####### HEADER ########
 header
     width: 100%;
-    background-color: $cinza;
+    background-color: $cinza_escuro;
     nav
         ul.nav-principal
             display: block;
             padding: 0;
             margin: 0;
+            min-width: 470px;
             li
                 display: inline-block;
                 list-style: none;
@@ -53,50 +57,15 @@ header
                     margin: 0;
                     transition: all ease 0.5s
                     &:hover
-                        background-color: $cinza + 10%;
-    form.buscar
-        float: right;
-        padding: 33px 0;
-        position: relative;
-        min-width: 242px;
-        input[type="text"]
-            display: block;
-            float: left;
-            height: 40px;
-            border-radius: 3px 0 0 3px;
-            width: 0px;
-            right: -30px;
-            transition: all ease 0.5s
-            position: relative;
-            &:hover, &:focus
-                width: 195px;
-                margin-right: 0;
-                right: -2px;
-
-        button.search
-            width: 40px;
-            height: 40px;
-            background: url(./../images/icons/icon-search.svg) no-repeat;
-            background-color: $cinza + 20%;
-            background-size: 35px 35px;
-            background-position: center;
-            border: none;
-            border-radius: 3px;
-            position: relative;
-            z-index: 10;
-            &:hover ~ #text_busca
-                width: 200px;
-                margin-right: 0;
-                right: -2px;
+                        background-color: $cinza_escuro + 10%;
 .mega-menu-dropdown
     position: relative;
     width: 100%;
-    min-height: 350px;
-    border: 1px solid #ccc;
-    background: #95A5A6;
+    height: 350px;
+    background: #EEEEEE;
     .destaque
         background: #F9C92B;
-        height: 350px;
+        height: 349px;
         padding-top: 30px;
         .chamada-destaque
         a
@@ -109,3 +78,35 @@ header
             margin-top: 10px;
             padding-left: 10px;
             padding-right: 10px;
+    .box-links
+        min-height: 310px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0;
+        h3
+            text-transform: uppercase;
+            margin-top: 0;
+        h4
+            font-size: 12px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        .link-preview
+            height: 90px;
+            overflow: hidden;
+            margin-top: 5px;
+            margin-right: 15px;
+            transition: all ease 0.4s
+            border-radius: 2px;
+            &:hover
+                background: #ccc;
+            a
+                text-decoration: none;
+            img
+                margin-right: 5px;
+            p
+                font-size: 12px;
+                color: #333;
+                text-align: justify;
+                padding-right: 15px;
