@@ -12,7 +12,7 @@
                 <div class="col-md-6 border">
                     <nav>
                         <ul class="nav-principal">
-                            <li v-for="links in listaLinks"><a @click="showMegaMenu($event, links.title)" href="{{links.link}}">{{links.title}}</a></li>
+                            <li v-for="links in listaLinks"><a @click="menuStatus = menuStatus * -1" href="{{links.link}}">{{links.title}}</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -26,7 +26,7 @@
     <div id="megaMenu">
         <div class="container">
             <div class="row">
-                <div v-bind:class="{'mostrar': menuDestaqueStatus}" class="mega-menu-dropdown" >
+                <div v-if="menuStatus == 1" transition="slidedown" class="mega-menu-dropdown" >
                     <div class="col-md-3 destaque">
                         <div class="chamada-destaque">
                             <a href="#">
@@ -54,12 +54,17 @@
 </template>
 
 <script>
+Vue.transition('slidedown', {
+    enterClass: 'mostrar',
+    leaveClass: 'nao-mostar'
+});
+
 import InputSearch from './InputSearch.vue';
 
 export default {
   data() {
     return {
-        menuDestaqueStatus: false,
+        menuStatus: -1,
         listaLinks: [
             {title: 'Home', link: '#'},
             {title: 'Destaques', link: '#'},
@@ -91,14 +96,14 @@ export default {
   ready() {},
   attached() {},
   methods: {
-      showMegaMenu: function(e, menu) {
-          e.preventDefault();
-          var self = this;
-          if(menu === 'Destaques') {
-              console.log(true);
-              self.menuDestaqueStatus = true;
-          }
-      }
+    //   showMegaMenu: function(e, menu) {
+    //       e.preventDefault();
+    //       var self = this;
+    //       if(menu === 'Destaques') {
+    //           console.log(true);
+    //           self.menuStatus = true;
+    //       }
+    //   }
   },
   components: {
       InputSearch

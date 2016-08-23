@@ -1,4 +1,4 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 import MegaMenu from './MegaMenu.vue';
 // import Bootstrap from 'bootstrap'
 // import App from './App.vue'
