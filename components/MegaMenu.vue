@@ -12,7 +12,7 @@
                 <div class="col-md-6 border">
                     <nav>
                         <ul class="nav-principal">
-                            <li v-for="links in listaLinks"><a @click="menuStatus = menuStatus * -1" href="{{links.link}}">{{links.title}}</a></li>
+                            <li v-for="links in listaLinks"><a @click="showMenu($event, links.title)" href="{{links.link}}">{{links.title}}</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -23,10 +23,10 @@
             </div> <!-- end row -->
         </div> <!-- container -->
     </div> <!-- navegacao -->
-    <div id="megaMenu">
+    <div id="megaMenu" v-show="menuDestaqueStatus" class="animated" transition="slideInDown">
         <div class="container">
             <div class="row">
-                <div v-if="menuStatus == 1" transition="slidedown" class="mega-menu-dropdown" >
+                <div class="mega-menu-dropdown" >
                     <div class="col-md-3 destaque">
                         <div class="chamada-destaque">
                             <a href="#">
@@ -54,17 +54,19 @@
 </template>
 
 <script>
-Vue.transition('slidedown', {
-    enterClass: 'mostrar',
-    leaveClass: 'nao-mostar'
+Vue.transition('slideInDown', {
+    enterClass: 'slideInDown',
+    leaveClass: 'slideOutUp'
 });
 
 import InputSearch from './InputSearch.vue';
+require("./../node_modules/animate.css/animate.min.css");
+
 
 export default {
   data() {
     return {
-        menuStatus: -1,
+        menuDestaqueStatus: false,
         listaLinks: [
             {title: 'Home', link: '#'},
             {title: 'Destaques', link: '#'},
@@ -96,20 +98,21 @@ export default {
   ready() {},
   attached() {},
   methods: {
-    //   showMegaMenu: function(e, menu) {
-    //       e.preventDefault();
-    //       var self = this;
-    //       if(menu === 'Destaques') {
-    //           console.log(true);
-    //           self.menuStatus = true;
-    //       }
-    //   }
+      showMenu: function(e, menu) {
+          e.preventDefault();
+          var self = this;
+          if(menu === 'Destaques' || self.menuDestaqueStatus == true) {
+              console.log(true);
+              self.menuDestaqueStatus = ! self.menuDestaqueStatus;
+          }
+      }
   },
   components: {
       InputSearch
   }
 };
 </script>
+
 
 <style lang="stylus" scoped>
 $cinza_escuro = #36424a;
@@ -148,10 +151,6 @@ header
     width: 100%;
     height: 350px;
     background: #EEEEEE;
-    top: -360px;
-    transition: all ease 0.5s;
-    &.mostrar
-        top: 0;
     .destaque
         background: #F9C92B;
         min-height: 349px;

@@ -1,9 +1,9 @@
 // import Vue from 'vue';
 import MegaMenu from './MegaMenu.vue';
 // import Bootstrap from 'bootstrap'
-// import App from './App.vue'
 // import BlockContent from './BlockContent.vue'
 require('./../styl/main.styl');
+require('./../css/bootstrap.min.css');
 
 new Vue({
     el: 'html',

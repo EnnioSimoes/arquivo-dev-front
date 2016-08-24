@@ -10,8 +10,8 @@ module.exports = {
     },
     plugins: [
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
+            // $: 'jquery',
+            // jQuery: 'jquery',
             Vue: 'vue'
         })
     ],
@@ -44,7 +44,7 @@ module.exports = {
             loader: 'style-loader!css-loader!stylus-loader?paths=styl/'
         }, {
             test: /\.css$/,
-            loader: "style!css"
+            loader: "style-loader!css-loader"
         }]
     },
     devServer: {
