@@ -23,10 +23,10 @@
             </div> <!-- end row -->
         </div> <!-- container -->
     </div> <!-- navegacao -->
-    <div id="megaMenu" v-show="menuDestaqueStatus" class="animated" transition="slideInDown">
+    <div v-show="menuDestaqueStatus" class="mega-menu-dropdown animated" transition="slideInDown">
         <div class="container">
             <div class="row">
-                <div class="mega-menu-dropdown" >
+                <div >
                     <div class="col-md-3 destaque">
                         <div class="chamada-destaque">
                             <a href="#">
@@ -119,6 +119,7 @@ $cinza_escuro = #36424a;
 
 //####### HEADER ########
 header
+    position: relative;
     .navegacao
         width: 100%;
         background-color: $cinza_escuro;
@@ -146,56 +147,59 @@ header
                         transition: all ease 0.5s;
                         &:hover
                             background-color: $cinza_escuro + 10%;
-.mega-menu-dropdown
-    position: relative;
-    width: 100%;
-    height: 350px;
-    background: #EEEEEE;
-    .destaque
-        background: #F9C92B;
-        min-height: 349px;
-        padding-top: 30px;
-        .chamada-destaque
-        a
-            text-decoration: none;
-        p
-            color: #333;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-    .box-links
-        min-height: 310px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 0;
-        h3
-            text-transform: uppercase;
-            margin-top: 0;
-        h4
-            font-size: 12px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 5px;
-            margin-top: 5px;
-        .link-preview
-            height: 90px;
-            overflow: hidden;
-            margin-top: 5px;
-            margin-right: 15px;
-            transition: all ease 0.4s
-            border-radius: 2px;
-            &:hover
-                background: #ccc;
+    .mega-menu-dropdown
+        position: absolute;
+        width: 1170px;
+        height: 350px;
+        left: 50%;
+        margin-left: -585px;
+        background: #EEEEEE;
+        z-index: 5;
+        .destaque
+            background: #F9C92B;
+            min-height: 349px;
+            padding-top: 30px;
+            .chamada-destaque
             a
                 text-decoration: none;
-            img
-                margin-right: 5px;
             p
+                color: #333;
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+        .box-links
+            min-height: 310px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 0;
+            h3
+                text-transform: uppercase;
+                margin-top: 0;
+            h4
                 font-size: 12px;
                 color: #333;
-                text-align: justify;
-                padding-right: 15px;
+                font-weight: bold;
+                margin-bottom: 5px;
+                margin-top: 5px;
+            .link-preview
+                height: 90px;
+                overflow: hidden;
+                margin-top: 5px;
+                margin-right: 15px;
+                transition: all ease 0.4s
+                border-radius: 2px;
+                &:hover
+                    background: #ccc;
+                a
+                    text-decoration: none;
+                img
+                    margin-right: 5px;
+                p
+                    font-size: 12px;
+                    color: #333;
+                    text-align: justify;
+                    padding-right: 15px;
 </style>

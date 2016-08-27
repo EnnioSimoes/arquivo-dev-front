@@ -11,11 +11,17 @@ p, a, span, h1, h2, h3, h4, h5
     color: #333;
 
 $cinza_escuro = #36424a;
+$cinza_claro = #EEEEEE;
 $azul = #0483B5;
 $laranja = #E84C1C;
 $verde = #05C290;
 
+$blur = 2px;
+
+
 //####### STRUCTURE ########
+body
+    background: $cinza_claro
 .icon
     display: block;
     text-indent: -9999px;
@@ -31,3 +37,57 @@ $verde = #05C290;
     background: url(./../images/icons/icon-code.svg) no-repeat;
     background-position: center;
     background-size: 17px;
+#postContent
+    padding-top: 20px;
+    .post-card
+        overflow: hidden;
+        background: #fff;
+        height: 430px;
+        width: 440px;
+        .card-header
+            position: relative;
+            .bk-header
+                margin-top: 0;
+                display: block;
+                background: url(http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg) no-repeat;
+                position: relative;
+                width: 440px;
+                height: 200px;
+                -webkit-filter: blur($blur);
+                -moz-filter: blur($blur);
+                -o-filter: blur($blur);
+                -ms-filter: blur($blur);
+                filter: blur($blur);
+                transition: all ease 1s;
+                &:hover
+                    -webkit-filter: blur(0);
+                    -moz-filter: blur(0);
+                    -o-filter: blur(0);
+                    -ms-filter: blur(0);
+                    filter: blur(0);
+            h3
+                bottom: 10px;
+                margin-left: 10px;
+                display: block;
+                width: 75%;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                color: #fff;
+                font-family: Verdana, Arial;
+                font-size: 20px;
+                padding: 7px;
+                line-height: 33px;
+                font-weight: bold;
+                z-index: 5;
+                &:hover ~ .bk-header
+                    -webkit-filter: blur(0);
+                    -moz-filter: blur(0);
+                    -o-filter: blur(0);
+                    -ms-filter: blur(0);
+                    filter: blur(0);
+        .card-content
+            time
+                color: #737373;
+                font-size: 11px;
+                padding: 30px;
+                display: inline-block;
