@@ -155,6 +155,7 @@ header
         margin-left: -585px;
         background: #EEEEEE;
         z-index: 5;
+        box-shadow: 2px 2px 10px #333;
         .destaque
             background: #F9C92B;
             min-height: 349px;
