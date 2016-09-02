@@ -44,7 +44,7 @@ body
     article.post-card
         overflow: hidden;
         background: #fff;
-        height: 450px;
+        min-height: 450px;
         width: 100%;
         float: left;
         margin-top: 30px;
@@ -83,7 +83,7 @@ body
         .post-content
             p
                 color: #4b4b4b;
-                padding: 0 30px 30px 30px;
+                padding: 10px 30px 30px 30px;
                 font-size: 13px;
                 margin: 0;
             .post-footer
@@ -102,12 +102,12 @@ body
                 time
                     color: #aaa;
                     font-size: 11px;
-                    padding: 30px;
+                    padding: 5px;
                     display: inline-block;
                     line-height: 23px;
                 span
                     float: right;
-                    padding: 30px;
+                    padding: 5px;
                     a.tagged
                         padding: 5px;
                         font-size: 11px;
@@ -127,3 +127,18 @@ body
                             font-weight: bold;
                             box-shadow: 1px 1px 2px #ccc;
                             background: $bk-laravel;
+            .referencia
+                min-height: 50px;
+                clear: both;
+                img
+                    border-radius: 100%;
+                    width: 50px;
+                p
+                    text-align: left;
+                    padding: 0;
+                    a
+                        line-height: 50px;
+                        font-size: 12px;
+                        color: $cinza_escuro;
+                        text-decoration: none;
+                        font-style: italic;
