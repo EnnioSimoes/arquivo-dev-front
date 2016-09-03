@@ -1,20 +1,20 @@
 <template lang="html">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div v-for="post in posts" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <article class="post-card">
             <a href="#" alt="" title="">
                 <div class="post-header">
-                    <h3>Quick Tip: Working with theJavaScript Battery API</h3>
-                    <div class="bk-header"></div>
+                    <h3>{{post.titulo}}</h3>
+                    <div class="bk-header" style="background: url( {{post.imagem}} ) no-repeat center 0; background-size: cover;"></div>
                 </div>
             </a>
             <div class="post-content">
                 <div class="post-info">
                     <div class="col-md-5">
-                        <time datetime="2016-08-23">August 23rd, 2016</time>
+                        <time datetime="2016-08-23">{{post.data}}</time>
                     </div>
                     <div class="col-md-7">
                         <span>
-                            <a href="/tag/javascript/" class="tagged tag-javascript">JavaScript</a>
+                            <a v-for="categoria in post.categorias" href="{{categoria.link}}" class="tagged tag-javascript">{{categoria.nome}}</a>
                             <a href="/tag/javascript/" class="tagged tag-php">PHP</a>
                             <a href="/tag/javascript/" class="tagged tag-laravel">Laravel</a>
                         </span>
@@ -22,17 +22,17 @@
                 </div>
                 <div class="referencia">
                     <div class="col-xs-3 col-sm-3 col-md-3">
-                        <img src="https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png" class="block-center">
+                        <img src="{{post.logo}}" class="block-center">
                     </div>
                     <div class="col-xs-9 col-md-9 col-md-9">
                         <p>
-                            <a href="#">tableless.com.br</a>
+                            <a href="#">{{post.referencia}}</a>
                         </p>
                     </div>
                 </div>
                 <div class="clear-fix">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        {{post.descricao}}
                     </p>
                 </div>
                 <div class="post-footer">
@@ -41,7 +41,7 @@
                         <star-count></star-count>
                     </div>
                     <div class="col-sm-6">
-                        <a href="#" class="read-more">Leia mais</a>
+                        <a href="{{post.link}}" class="read-more">Leia mais</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,27 @@ export default {
         posts: [
             {
                 titulo: 'Quick Tip: Working with theJavaScript Battery API',
-                imagem: ''
+                imagem: 'http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg',
+                logo: 'https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png',
+                data: 'August 23rd, 2016',
+                referencia: 'tableless.com.br',
+                descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                like: '5k',
+                link: '#',
+                categorias: [
+                    {
+                        nome: 'Laravel',
+                        link: 'categoria/laravel/'
+                    },
+                    {
+                        nome: 'JavaScript',
+                        link: 'categoria/javascript/'
+                    },
+                    {
+                        nome: 'PHP',
+                        link: 'categoria/php/'
+                    }
+                ]
             },
         ]
     };
@@ -95,8 +115,6 @@ article.post-card
         .bk-header
             margin-top: 0;
             display: block;
-            background: url(http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg) no-repeat center 0;
-            background-size: cover;
             overflow: hidden;
             position: relative;
             width: 100%;
@@ -116,7 +134,7 @@ article.post-card
             position: absolute;
             color: #fff;
             font-family: Verdana, Arial;
-            font-size: 20px;
+            font-size: 1.3em;
             padding: 7px;
             line-height: 33px;
             font-weight: bold;
