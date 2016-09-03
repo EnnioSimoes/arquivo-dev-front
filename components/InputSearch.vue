@@ -31,6 +31,8 @@ form.buscar
     padding-top: 33px;
     position: relative;
     width: 242px;
+    .form-group
+        min-width: 66px;
     input[type="text"]
         display: block;
         float: left;

@@ -1,6 +1,6 @@
 // import Vue from 'vue';
 import MegaMenu from './MegaMenu.vue';
-import StarCount from './StarCount.vue';
+import PostCard from './PostCard.vue';
 // import Bootstrap from 'bootstrap'
 // import BlockContent from './BlockContent.vue'
 require('./../css/bootstrap.min.css');
@@ -10,6 +10,6 @@ new Vue({
     el: 'html',
     components: {
         MegaMenu,
-        StarCount
+        PostCard
     }
 })
