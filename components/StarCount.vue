@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="tag-count">
-        <div class="star-like"></div>
+        <div @click="likeMais($event)" v-bind:class="{'bounceIn': animate}" class="star-like animated"></div>
         <span>2k</span>
     </div>
 </template>
@@ -11,56 +11,66 @@ import dynamics from 'dynamics.js';
 export default {
     data() {
         return {
-
+            animate: false
         };
     },
+    props: ['userid'],
     computed: {},
     ready() {
-        var self = this;
-        var el = document.getElementsByClassName("star-like");
-
-        for (var i = 0; i < el.length; i++) {
-
-            //   el[i].removeEventListener('mouseenter');
-            el[i].addEventListener('click', function(event) {
-                event.preventDefault();
-                self.verticalBounce(this);
-            }, false);
-        }
+        // var self = this;
+        // var el = document.getElementsByClassName("star-like");
+        //
+        // for (var i = 0; i < el.length; i++) {
+        //
+        //     //   el[i].removeEventListener('mouseenter');
+        //     el[i].addEventListener('click', function(event) {
+        //         event.preventDefault();
+        //         self.verticalBounce(this);
+        //     }, false);
+        // }
     },
     attached() {},
     methods: {
-        verticalBounce: function(el) {
-            // Inpulso para saltar
-            dynamics.animate(el, {
-                scaleY: 0.8
-            }, {
-                type: dynamics.bounce,
-                duration: 500,
-                bounciness: 0
-            })
-            // Salto
-            dynamics.animate(el, {
-                translateY: -7
-                // rotateY: -100
-            }, {
-                type: dynamics.forceWithGravity,
-                bounciness: 0,
-                duration: 500,
-                delay: 70,
-                frequency: 192
-            })
-            // Amortecendo salto
-            dynamics.animate(el, {
-                scaleY: 0.8
-            }, {
-                type: dynamics.bounce,
-                duration: 400,
-                bounciness: 600,
-                delay: 650
-                // complete: verticalBounce(el)
-            })
+        likeMais: function(id) {
+            var self = this;
+            // alert('teste');
+            self.animate = true;
+            window.setTimeout(function() {
+                self.animate = false;
+            }, 1000);
+            alert(self.userid);
         }
+        // verticalBounce: function(el) {
+        //     // Inpulso para saltar
+        //     dynamics.animate(el, {
+        //         scaleY: 0.8
+        //     }, {
+        //         type: dynamics.bounce,
+        //         duration: 500,
+        //         bounciness: 0
+        //     })
+        //     // Salto
+        //     dynamics.animate(el, {
+        //         translateY: -7
+        //         // rotateY: -100
+        //     }, {
+        //         type: dynamics.forceWithGravity,
+        //         bounciness: 0,
+        //         duration: 500,
+        //         delay: 70,
+        //         frequency: 192
+        //     })
+        //     // Amortecendo salto
+        //     dynamics.animate(el, {
+        //         scaleY: 0.8
+        //     }, {
+        //         type: dynamics.bounce,
+        //         duration: 400,
+        //         bounciness: 600,
+        //         delay: 650
+        //         // complete: verticalBounce(el)
+        //     })
+        // }
     },
     components: {}
 };

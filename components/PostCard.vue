@@ -4,7 +4,7 @@
             <a href="#" alt="" title="">
                 <div class="post-header">
                     <h3>{{post.titulo}}</h3>
-                    <div class="bk-header" style="background: url( {{post.imagem}} ) no-repeat center 0; background-size: cover;"></div>
+                    <div class="bk-header" v-bind:style="{background: 'url( '+ post.imagem +' )  no-repeat center 0', backgroundSize: 'cover' }" ></div>
                 </div>
             </a>
             <div class="post-content">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="referencia">
                     <div class="col-xs-3 col-sm-3 col-md-3">
-                        <img src="{{post.logo}}" class="block-center">
+                        <img v-bind:src="post.logo" class="block-center">
                     </div>
                     <div class="col-xs-9 col-md-9 col-md-9">
                         <p>
@@ -38,7 +38,7 @@
                 <div class="post-footer">
                     <div class="col-sm-6">
                         <!-- component StarCount -->
-                        <star-count></star-count>
+                        <star-count userid="{{post.id}}"></star-count>
                     </div>
                     <div class="col-sm-6">
                         <a href="{{post.link}}" class="read-more">Leia mais</a>
@@ -57,18 +57,19 @@ export default {
     return {
         posts: [
             {
+                id: 1,
                 titulo: 'Quick Tip: Working with theJavaScript Battery API',
                 imagem: 'http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg',
                 logo: 'https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png',
                 data: 'August 23rd, 2016',
                 referencia: 'tableless.com.br',
                 descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                like: '5k',
+                like: '5',
                 link: '#',
                 categorias: [
                     {
                         nome: 'Laravel',
-                        link: 'categoria/laravel/'
+                        link: 'categoria/laravel/',
                     },
                     {
                         nome: 'JavaScript',
