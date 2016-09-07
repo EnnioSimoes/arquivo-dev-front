@@ -1,12 +1,11 @@
 <template lang="html">
     <div class="tag-count">
         <div @click="likeMais($event)" v-bind:class="{'bounceIn': animate}" class="star-like animated"></div>
-        <span>2k</span>
+        <span>{{postlike}}</span>
     </div>
 </template>
-
 <script>
-import dynamics from 'dynamics.js';
+// import dynamics from 'dynamics.js';
 
 export default {
     data() {
@@ -14,9 +13,12 @@ export default {
             animate: false
         };
     },
-    props: ['userid'],
+    props: ['postid','postlike'],
     computed: {},
     ready() {
+        localStorage.setItem('starCount', 'Tom');
+
+        console.log(this.myIp());
         // var self = this;
         // var el = document.getElementsByClassName("star-like");
         //
@@ -33,44 +35,17 @@ export default {
     methods: {
         likeMais: function(id) {
             var self = this;
-            // alert('teste');
             self.animate = true;
             window.setTimeout(function() {
                 self.animate = false;
-            }, 1000);
-            alert(self.userid);
+            }, 500);
+            self.postlike = parseInt(self.postlike) + 1;
+            // alert(self.postid + self.postlike);
+        },
+        // https://www.ipify.org/
+        getIp: function(json) {
+            console.log("My public IP address is: ", json.ip);
         }
-        // verticalBounce: function(el) {
-        //     // Inpulso para saltar
-        //     dynamics.animate(el, {
-        //         scaleY: 0.8
-        //     }, {
-        //         type: dynamics.bounce,
-        //         duration: 500,
-        //         bounciness: 0
-        //     })
-        //     // Salto
-        //     dynamics.animate(el, {
-        //         translateY: -7
-        //         // rotateY: -100
-        //     }, {
-        //         type: dynamics.forceWithGravity,
-        //         bounciness: 0,
-        //         duration: 500,
-        //         delay: 70,
-        //         frequency: 192
-        //     })
-        //     // Amortecendo salto
-        //     dynamics.animate(el, {
-        //         scaleY: 0.8
-        //     }, {
-        //         type: dynamics.bounce,
-        //         duration: 400,
-        //         bounciness: 600,
-        //         delay: 650
-        //         // complete: verticalBounce(el)
-        //     })
-        // }
     },
     components: {}
 };

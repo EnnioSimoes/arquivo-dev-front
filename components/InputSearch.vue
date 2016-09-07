@@ -33,6 +33,7 @@ form.buscar
     width: 242px;
     .form-group
         min-width: 66px;
+        position: relative;
     input[type="text"]
         display: block;
         float: left;
@@ -41,11 +42,12 @@ form.buscar
         width: 0px;
         right: -30px;
         transition: all ease 0.5s
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 5px;
         &:hover, &:focus
-            width: 195px;
-            margin-right: 0;
-            right: -2px;
+            width: 150px;
+            left: -150px;
     button.search
         width: 40px;
         height: 40px;
@@ -58,7 +60,6 @@ form.buscar
         position: relative;
         z-index: 10;
         &:hover ~ #text_busca
-            width: 200px;
-            margin-right: 0;
-            right: -2px;
+            width: 150px;
+            left: -150px;
 </style>

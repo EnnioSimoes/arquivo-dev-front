@@ -14,9 +14,7 @@
                     </div>
                     <div class="col-md-7">
                         <span>
-                            <a v-for="categoria in post.categorias" href="{{categoria.link}}" class="tagged tag-javascript">{{categoria.nome}}</a>
-                            <a href="/tag/javascript/" class="tagged tag-php">PHP</a>
-                            <a href="/tag/javascript/" class="tagged tag-laravel">Laravel</a>
+                            <a v-for="categoria in post.categorias" v-bind:style="{background: categoria.color}" href="{{categoria.link}}"  class="tagged">{{categoria.nome}}</a>
                         </span>
                     </div>
                 </div>
@@ -38,7 +36,7 @@
                 <div class="post-footer">
                     <div class="col-sm-6">
                         <!-- component StarCount -->
-                        <star-count userid="{{post.id}}"></star-count>
+                        <star-count v-bind:postid="post.id" v-bind:postlike="post.like"></star-count>
                     </div>
                     <div class="col-sm-6">
                         <a href="{{post.link}}" class="read-more">Leia mais</a>
@@ -70,14 +68,17 @@ export default {
                     {
                         nome: 'Laravel',
                         link: 'categoria/laravel/',
+                        color: '#EE5F5B'
                     },
                     {
                         nome: 'JavaScript',
-                        link: 'categoria/javascript/'
+                        link: 'categoria/javascript/',
+                        color: '#F0DA50'
                     },
                     {
                         nome: 'PHP',
-                        link: 'categoria/php/'
+                        link: 'categoria/php/',
+                        color: '#8095D4'
                     }
                 ]
             },
@@ -172,21 +173,11 @@ article.post-card
                     padding: 5px;
                     font-size: 11px;
                     text-decoration: none;
-                    &.tag-javascript
-                        color: #fff;
-                        font-weight: bold;
-                        box-shadow: 1px 1px 2px #ccc;
-                        background: $bk-javascript;
-                    &.tag-php
-                        color: #fff;
-                        font-weight: bold;
-                        box-shadow: 1px 1px 2px #ccc;
-                        background: $bk-php;
-                    &.tag-laravel
-                        color: #fff;
-                        font-weight: bold;
-                        box-shadow: 1px 1px 2px #ccc;
-                        background: $bk-laravel;
+                    color: #fff;
+                    font-weight: bold;
+                    box-shadow: 1px 1px 2px #ccc;
+                    text-shadow: 1px 1px 1px #333;
+                    margin: 2px;
         .referencia
             min-height: 50px;
             clear: both;
