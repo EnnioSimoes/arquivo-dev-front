@@ -34,11 +34,12 @@
                     </p>
                 </div>
                 <div class="post-footer">
-                    <div class="col-sm-6">
-                        <!-- component StarCount -->
+                    <div class="col-sm-7">
+                        <!-- component ViewCount -->
+                        <view-count v-bind:postid="post.id" v-bind:postviews="post.views"></view-count>
                         <star-count v-bind:postid="post.id" v-bind:postlike="post.like"></star-count>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <a href="{{post.link}}" class="read-more">Leia mais</a>
                     </div>
                 </div>
@@ -48,6 +49,7 @@
 </template>
 
 <script>
+import ViewCount from './ViewCount.vue';
 import StarCount from './StarCount.vue';
 
 export default {
@@ -62,7 +64,8 @@ export default {
                 data: 'August 23rd, 2016',
                 referencia: 'tableless.com.br',
                 descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                like: '5',
+                like: '15%',
+                views: '500',
                 link: '#',
                 categorias: [
                     {
@@ -90,7 +93,8 @@ export default {
   attached() {},
   methods: {},
   components: {
-      StarCount
+      ViewCount,
+      StarCount,
   }
 };
 </script>
@@ -159,6 +163,7 @@ article.post-card
                 margin-right: 30px;
                 margin-bottom: 5px;
                 box-shadow: 1px 1px 2px #ccc;
+                font-size: 12px;
         .post-info
             time
                 color: #aaa;
@@ -176,7 +181,6 @@ article.post-card
                     color: #fff;
                     font-weight: bold;
                     box-shadow: 1px 1px 2px #ccc;
-                    text-shadow: 1px 1px 1px #333;
                     margin: 2px;
         .referencia
             min-height: 50px;
