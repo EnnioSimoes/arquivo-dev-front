@@ -1,5 +1,5 @@
 <template lang="html">
-    <div v-for="post in posts" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <div v-for="post in posts" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <article class="post-card">
             <a href="#" alt="" title="">
                 <div class="post-header">
@@ -37,7 +37,7 @@
                     <div class="col-sm-7">
                         <!-- component ViewCount -->
                         <view-count v-bind:postid="post.id" v-bind:postviews="post.views"></view-count>
-                        <star-count v-bind:postid="post.id" v-bind:postlike="post.like"></star-count>
+                        <!-- <star-count v-bind:postid="post.id" v-bind:postlike="post.like"></star-count> -->
                     </div>
                     <div class="col-sm-5">
                         <a href="{{post.link}}" class="read-more">Leia mais</a>
@@ -50,52 +50,33 @@
 
 <script>
 import ViewCount from './ViewCount.vue';
-import StarCount from './StarCount.vue';
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+// import StarCount from './StarCount.vue';
 
 export default {
-  data() {
-    return {
-        posts: [
-            {
-                id: 1,
-                titulo: 'Quick Tip: Working with theJavaScript Battery API',
-                imagem: 'http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg',
-                logo: 'https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png',
-                data: 'August 23rd, 2016',
-                referencia: 'tableless.com.br',
-                descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                like: '15%',
-                views: '500',
-                link: '#',
-                categorias: [
-                    {
-                        nome: 'Laravel',
-                        link: 'categoria/laravel/',
-                        color: '#EE5F5B'
-                    },
-                    {
-                        nome: 'JavaScript',
-                        link: 'categoria/javascript/',
-                        color: '#F0DA50'
-                    },
-                    {
-                        nome: 'PHP',
-                        link: 'categoria/php/',
-                        color: '#8095D4'
-                    }
-                ]
-            },
-        ]
-    };
-  },
-  computed: {},
-  ready() {},
-  attached() {},
-  methods: {},
-  components: {
-      ViewCount,
-      StarCount,
-  }
+    data() {
+        return {
+            posts: []
+        };
+    },
+    computed: {},
+    ready() {
+        //   self.$http.headers.common['X-CSRF-TOKEN'] = document.getElementById('token').getAttribute('value');
+
+        var self = this;
+        self.$http.get('/components/posts-example.json').then((data) => {
+            self.posts = data.data;
+        }, (data) => {
+            console.log("Erro: " + data.status + " - " + data.statusText);
+        });
+    },
+    attached() {},
+    methods: {},
+    components: {
+    ViewCount,
+    //   StarCount,
+    }
 };
 </script>
 
@@ -114,7 +95,7 @@ article.post-card
     min-height: 450px;
     width: 100%;
     float: left;
-    margin-top: 30px;
+    margin-top: 70px;
     box-shadow: 1px 1px 3px #ccc;
     .post-header
         position: relative;

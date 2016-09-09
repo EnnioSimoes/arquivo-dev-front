@@ -12,7 +12,7 @@
 </script>
 
 <style lang="stylus" scoped>
-$cinza = #36424a;
+$cinza = #eee;
 
 form.buscar
     box-sizing: border-box;
@@ -52,8 +52,8 @@ form.buscar
         width: 40px;
         height: 40px;
         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AgSFwwCSyL+IgAAAj5JREFUSMfdlE1oE1EQx/+z6TbJarIlm1AoiOC16mkREVG0ttJDPQrdq1AUc9Qe9SZoRQ82ntqbidBzwY9CxUNFMYJF19KDUKMx36tJzCa25D0v2botrrvUeNB3mtl98/+9N/NmgH99kdOPJ0tL+1nbdw7EhgHq73zOg7DAGc2cOnb43Y4Ac7reGzWqtzjoPACfQ1ybA4m+oHhJVdUNz4A5Xe9VjNo8gGEvp+OgR0YkdObs4OC6054euxMxqncA2hSX5RBiUQUBvx8A0Gq1UCobqNbqndPx0xGjdhvARdcbLDx9dkAQ6DUAAQAGBvoRU5RfBpXKFXzOFX6mi9NBp5oImwbRhOXLcshRHABiUQVyOGy5PiI24bRXsN1lyC7gtqLRiD0RQ+4AYI9lBANBV4AUDNjdvV4A9DcazQ7IWEaz1XQNNJst+4PNeKnBQ8ssFiuugGKpbG+IB64Agm8WQBsAavU68oWSo3ihWEK9/q2jDSb0YNYVcPLoIR3g03aRtcxHNEwTnDFwxtBoNLD24dMWeDaXFZ4vL496GhXpdFqsmuvzIBrxUsAv1a94u7oCSZK+S33y8fj4+IvfFRmqqm5UFHmMwBNWupzGUDafg766AlEUsSsU8hNji4lk8sQOxjUfAbCvo/seRI85o5mXb17dJBJGd4fDILJkuCkQjV3QtMWuvP3pVOoycdzYdrktEOFPAHFNmyLQtW1JkdqcjnS1exP3UpMgXAcATpiMa9pU10dCInn/6t1U6gr+u/UDwQPMHRgDG7EAAAAASUVORK5CYII=') no-repeat;
-        background-color: $cinza + 20%;
-        background-size: 35px 35px;
+        background-color: $cinza;
+        background-size: 25px 25px;
         background-position: center;
         border: none;
         border-radius: 3px;

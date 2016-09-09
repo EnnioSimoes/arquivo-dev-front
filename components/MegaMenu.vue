@@ -2,21 +2,21 @@
     <div class="navegacao">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 border">
+                <div class="col-md-3">
                     <h1>
                         <a href="#">
                             <img src="http://placehold.it/250x75?text=LOGO" class="block-center">
                         </a>
                     </h1>
                 </div>
-                <div class="col-md-6 border">
+                <div class="col-md-6">
                     <nav>
                         <ul class="nav-principal">
                             <li v-for="links in listaLinks"><a @click="showMenu($event, links.title)" href="{{links.link}}">{{links.title}}</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-md-3 border">
+                <div class="col-md-3">
                     <!-- Component InputSearch -->
                     <input-search></input-search>
                 </div>
@@ -116,15 +116,18 @@ export default {
 
 <style lang="stylus" scoped>
 $cinza_escuro = #36424a;
+$bk_primary = #ccc;
+$text_color = #525252;
 
 //####### HEADER ########
 header
     position: relative;
     .navegacao
         width: 100%;
-        background-color: $cinza_escuro;
+        background-color: #fff;
         position: relative;
         z-index: 10;
+        box-shadow: 1px 0 2px 2px rgba(42,42,42,.25);
         nav
             ul.nav-principal
                 display: block;
@@ -137,7 +140,7 @@ header
                     margin: 0;
                     padding: 0;
                     a
-                        color: #fff
+                        color: $text_color;
                         font-weight: bold;
                         font-size: 16px;
                         text-decoration: none;
@@ -146,7 +149,7 @@ header
                         margin: 0;
                         transition: all ease 0.5s;
                         &:hover
-                            background-color: $cinza_escuro + 10%;
+                            background-color: $bk_primary;
     .mega-menu-dropdown
         position: absolute;
         width: 1170px;
