@@ -124,7 +124,7 @@ header
     position: relative;
     .navegacao
         width: 100%;
-        background-color: #fff;
+        background-color: $cinza_escuro;
         position: relative;
         z-index: 10;
         box-shadow: 1px 0 2px 2px rgba(42,42,42,.25);

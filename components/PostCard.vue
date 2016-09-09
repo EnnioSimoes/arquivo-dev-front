@@ -1,5 +1,5 @@
 <template lang="html">
-    <div v-for="post in posts" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    <div v-for="post in posts" class="col-xs-12 col-sm-6 col-md-4 col-xg-4">
         <article class="post-card">
             <a href="#" alt="" title="">
                 <div class="post-header">
