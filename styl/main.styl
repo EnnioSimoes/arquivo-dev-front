@@ -15,6 +15,7 @@ $cinza_claro = #EEEEEE;
 $azul = #0483B5;
 $laranja = #E84C1C;
 $verde = #05C290;
+$text_footer = #fff;
 
 
 //####### MEDIA ########
@@ -25,6 +26,11 @@ $verde = #05C290;
 }
 
 //####### STRUCTURE ########
+.form-control:focus
+    border-color: #ccc;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 body
     background: $cinza_claro
 .icon
@@ -44,8 +50,43 @@ body
     background-size: 17px;
 #postContent
     padding-top: 20px;
-.form-control:focus
-    border-color: #ccc;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+#about
+    background-color: $azul;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: -100px;
+    h4
+        color: #fff;
+        font-size: 25px;
+        line-height: 30px;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+
+
+//####### FOOTER ########
+footer
+    width: 100%;
+    min-height: 155px;
+    background-color: $cinza_escuro;
+    position: relative;
+    margin-top: 150px;
+    .borda
+        height: 4px;
+        &.laranja
+            background-color: $laranja;
+        &.azul
+            background-color: $azul;
+        &.verde
+            background-color: $verde;
+    .logo-footer
+        img
+            display: block;
+            margin: 15px auto 0 auto;
+    .descricao
+        padding-top: 15px;
+        h4
+            color: $text_footer;
+            text-align: justify;
+            font-size: 15px;
+            line-height: 1.85em;

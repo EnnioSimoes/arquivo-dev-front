@@ -94,9 +94,10 @@ article.post-card
     background: #fff;
     min-height: 450px;
     width: 100%;
+    min-height: 530px;
     float: left;
     margin-top: 70px;
-    box-shadow: 1px 1px 3px #ccc;
+    box-shadow: 2px 2px 3px #ccc;
     .post-header
         position: relative;
         .bk-header
@@ -111,27 +112,28 @@ article.post-card
             -o-filter: blur($blur);
             -ms-filter: blur($blur);
             filter: blur($blur);
-            transition: all ease 1s;
         h3
             bottom: 10px;
             margin-left: 10px;
             display: block;
             width: 75%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.2);
             position: absolute;
             color: #fff;
-            font-family: Verdana, Arial;
-            font-size: 1.3em;
+            font-weight: 600;
+            font-family: 'Lato', Verdana, Arial;
+            font-size: 1.2em;
             padding: 7px;
             line-height: 33px;
-            font-weight: bold;
             z-index: 3;
+            text-shadow: 1px 1px 2px #000;
     .post-content
         p
             color: #4b4b4b;
             padding: 10px 30px 30px 30px;
-            font-size: 15px;
+            font-size: 14px;
             margin: 0;
+            font-family: 'Lato', Verdana, Arial;
         .post-footer
             width: 100%;
             height: 55px;

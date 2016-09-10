@@ -29,60 +29,50 @@
         ]
     },
     {
-        "id": 1,
-        "titulo": "Quick 'Tip': Working with theJavaScript Battery API",
-        "imagem": "http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg",
-        "logo": "https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png",
+        "id": 2,
+        "titulo": "Sublime Text Mastery",
+        "imagem": "https://laracasts.s3.amazonaws.com/images/video-thumbnails/series/sublime-text-mastery.jpg",
+        "logo": "https://avatars1.githubusercontent.com/u/5832706?v=3&s=460",
         "data": "August 23rd, 2016",
-        "referencia": "tableless.com.br",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "referencia": "laracasts.com",
+        "descricao": "Se você pretende dedicar uma carreira para desenvolvimento web, você não deveria, no processo, aproveitar cada gota de seu editor de código? Nesta série, vou mostrar-lhe tudo o que sei sobre Texto Sublime.",
         "like": 15,
-        "views": 500,
-        "link": "#",
+        "views": 73,
+        "link": "https://laracasts.com/series/sublime-text-mastery",
         "categorias": [
             {
-                "nome": "Laravel",
-                "link": "categoria/laravel/",
-                "color": "#EE5F5B"
+                "nome": "Workflow",
+                "link": "categoria/workflow/",
+                "color": "#3C3E42"
             },
             {
-                "nome": "JavaScript",
-                "link": "categoria/javascript/",
-                "color": "#F0DA50"
-            },
-            {
-                "nome": "PHP",
-                "link": "categoria/php/",
-                "color": "#8095D4"
+                "nome": "Tools",
+                "link": "categoria/tools/",
+                "color": "#1BB1B2"
             }
         ]
     },
     {
-        "id": 1,
-        "titulo": "Quick 'Tip': Working with theJavaScript Battery API",
-        "imagem": "http://blogdoscursos.com.br/wp-content/uploads/2015/11/Bootstrap-3.jpg",
-        "logo": "https://pbs.twimg.com/profile_images/496830024/Screen_shot_2009-10-29_at_13.16.14_400x400.png",
+        "id": 3,
+        "titulo": "Ribbbon: a project management system built on Laravel 5 and Vue.js",
+        "imagem": "http://www.codeforest.net/wp-content/uploads/2013/04/laravel-logo-big-570x398.png",
+        "logo": "https://pbs.twimg.com/profile_images/735153482362015744/2CefOV14.jpg",
         "data": "August 23rd, 2016",
-        "referencia": "tableless.com.br",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "referencia": "learninglaravel.net",
+        "descricao": "Ribbbon is a project management system built on Laravel 5.1.* & Vue.js :)",
         "like": 15,
-        "views": 500,
-        "link": "#",
+        "views": 25,
+        "link": "https://learninglaravel.net/ribbbon-a-project-management-system-built-on-laravel-5-and-vuejs",
         "categorias": [
+            {
+                "nome": "Tools",
+                "link": "categoria/tools/",
+                "color": "#1BB1B2"
+            },
             {
                 "nome": "Laravel",
                 "link": "categoria/laravel/",
                 "color": "#EE5F5B"
-            },
-            {
-                "nome": "JavaScript",
-                "link": "categoria/javascript/",
-                "color": "#F0DA50"
-            },
-            {
-                "nome": "PHP",
-                "link": "categoria/php/",
-                "color": "#8095D4"
             }
         ]
     },
