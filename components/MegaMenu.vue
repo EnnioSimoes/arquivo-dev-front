@@ -11,6 +11,9 @@
                 </div>
                 <div class="col-md-6">
                     <nav>
+                        <button class="hamburguer">
+
+                        </button>
                         <ul class="nav-principal">
                             <li v-for="links in listaLinks"><a @click="showMenu($event, links.title)" href="{{links.link}}">{{links.title}}</a></li>
                         </ul>
@@ -23,6 +26,9 @@
             </div> <!-- end row -->
         </div> <!-- container -->
     </div> <!-- navegacao -->
+    <div class="color-sptripe azul col-md-2"></div>
+    <div class="color-sptripe laranja col-md-8"></div>
+    <div class="color-sptripe verde col-md-2"></div>
     <div v-show="menuDestaqueStatus" class="mega-menu-dropdown animated" transition="slideInDown">
         <div class="container">
             <div class="row">
@@ -51,6 +57,7 @@
             </div>
         </div>
     </div> <!-- #megaMenu -->
+
 </template>
 
 <script>
@@ -116,19 +123,32 @@ export default {
 
 <style lang="stylus" scoped>
 $cinza_escuro = #36424a;
-$bk_primary = #ccc;
-$text_color = #525252;
+$bk_primary = #fff;
+$bk_secondary = #ccc;
+$text_color = #333;
+$azul = #0483B5;
+$laranja = #E84C1C;
+$verde = #05C290;
 
 //####### HEADER ########
 header
     position: relative;
     .navegacao
         width: 100%;
-        background-color: $cinza_escuro;
+        background-color: $bk_primary;
         position: relative;
         z-index: 10;
         box-shadow: 1px 0 2px 2px rgba(42,42,42,.25);
         nav
+            button.hamburguer
+                border: 1px solid #000;
+                width: 45px;
+                height: 45px;
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADHklEQVR42u2agXWbMBCGLxOUbuBu4E4QPEG8QfEESSaoO0HjCUInaDtBnQlCJijdwJ3A1f90elaowAgQB7H+9/QgPJDvPqQ76cgVXbiupA2QVgQgbYC0IgBpA6QVAUgbIK0IQNoAaUUA0gZIKxSARLWlaqlq7/ic+Jg0PFeoduDzJ9VKvlbMAcBCtVt2etmrJ7d+qPaTj4eefQ0KAA5/5uMYgvM71R6GANEHQMKO343kuAvEhvSIGB0AnP9FYYa6rzAS7scGAOdTac8tYSTkYwHAkP8q7XFFmA4fSWeN4AB+k474U1NOeiQEBbBW7bu0pzXCKHgfGsCWdOSfqlaq7UMCmFrwqwrZ4OGSAXwhPUqDAXhzigCkDRhAWI0iML9Qh/1BGwApnTY7Oel5Vp55ZkE6Zd7wvd/IMzq3kGsvcmD7WgfCJgC241W5QBinP5F7j4A9/Y7aL1lT7qdwwMtIr0braguwa0MtoLsAZOxEeu5hdualwWmXzHY2Z0NThod2bZ0f2HkDYcfHx4ptBpABZgvX76mhoOIC8Gz9+F/rHLqhdgWPgp0DHFMROge0ZIOf+FjydbxlDPNbPi8q99lzfsG/Y+w0IwSwnVO3z3YYw/2a//5jGV02PLdgGEt+tnQ4PKSMjRnpusF/e4U2ALak6Xuvs+egcwAQaO6se4/SBg/gU+ubMUyfK/deFIAtvd75zWnRZDJHLwAZ6ZQD7UlvNeeiI9uMoFd2BQBh/iPiI4KC6JqhJDSckMaQq/OW9y/Zhmoqhn0r7u9o9b0iz3VAk0KWw3IG0bSWz6h5BWgqxHasKknXC539+gIIHQTxpjbkfmN2RqrTnvQbr9pZWyeYGgAju7Lj8w2iDoC53hvAmBUhxB3sIn1ijvk+UJ2qgwFIPA0aU5g25gvRll6n8NqvR3PK7b4CBLPfqA2ubxlAK005BnRR8KpwBHDpAPBdcC3tZYO8P5P7AsjotEGaoj6QZ2WpSxZ4ZBBTU6d/kuiaBrEmN4VHSZV0qhjvu3QQ1wHSBkgrApA2QFoRgLQB0ooApA2QVgQgbYC0IgBpA6T1D+TlsUGYQEEWAAAAAElFTkSuQmCC') no-repeat;
+                background-size: 45px 45px;
+                float: right;
+                margin-top: -50px;
+                margin-right: 20px;
             ul.nav-principal
                 display: block;
                 padding: 0;
@@ -149,7 +169,7 @@ header
                         margin: 0;
                         transition: all ease 0.5s;
                         &:hover
-                            background-color: $bk_primary;
+                            background-color: $bk_secondary;
     .mega-menu-dropdown
         position: absolute;
         width: 1170px;
@@ -206,4 +226,12 @@ header
                     color: #333;
                     text-align: justify;
                     padding-right: 15px;
+    .color-sptripe
+        height: 4px;
+        &.laranja
+            background-color: $laranja;
+        &.azul
+            background-color: $azul;
+        &.verde
+            background-color: $verde;
 </style>
